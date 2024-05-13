@@ -1,0 +1,21 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% book.book_comments.each do |book_comment| %>
+      <tr>
+        <td><%= link_to(book_comment.user) do %>
+          <%= image_tag book_comment.user.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= book_comment.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
